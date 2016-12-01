@@ -7,8 +7,8 @@
 	LunchCheckController.$inject = ["$scope"];
 
 	function LunchCheckController($scope) {
-		$scope.lunchinput = "";
 		$scope.message = "";
+		$scope.lunchinput = "";
 
 		$scope.check = function () {
 			var message = "";

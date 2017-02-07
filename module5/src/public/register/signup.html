@@ -1,0 +1,48 @@
+<form name="signupForm" novalidate>
+		<input class="sign-input type="text" name="firstname" size="30" placeholder="first name"
+		ng-model="signupCtrl.firstName"
+		required >
+		<span ng-if="signupForm.firstname.$error.required
+					&& signupForm.firstname.$touched">
+		First name is required!				
+		</span>
+
+		<input class="sign-input type="text" name="lastname" size="30" placeholder="last name"
+		ng-model="signupCtrl.lastName"
+		required>
+		<span ng-if="signupForm.lastname.$error.required
+					&& signupForm.lastname.$touched">
+		Last name is required!				
+		</span>
+		
+		<input class="sign-input type="email" name="email" size="30" placeholder="email address"
+		ng-model="signupCtrl.email"
+		required >
+		<span ng-if="signupForm.email.$invalid
+					&& signupForm.email.$touched">
+		Must be a valid email address!				
+		</span>
+		
+		<input class="sign-input type="text" name="phone" size="30" placeholder="phone number"
+		ng-model="signupCtrl.phone"
+		required 
+		pattern="(\d{3})-(\d{3})-(\d{4})">
+		<span ng-if="signupForm.phone.$invalid
+					&& signupForm.phone.$touched">
+		Phone number is required!				
+		</span>
+		
+		<input class="sign-input" type="text" name="favdishSn" size="30" placeholder="favorite dish(menu number)"
+		ng-model="signupCtrl.favdishSn"
+		required >
+		<span ng-if="signupForm.favdishSn.$error.required
+					&& signupForm.favdishSn.$touched">
+		Favorite dish is required!				
+		</span>	
+		<span ng-if="!signupCtrl.dishExist">No such menu number exists!</span>
+	
+		<button class="sign-input ng-disable="signupForm.$invalid" ng-click="signupCtrl.registerUser()">Submit</button>
+		<div>
+			<span ng-if="signupCtrl.signSuccess">Your information has been saved.</span>
+		</div>
+</form>

@@ -1,0 +1,16 @@
+<div ng-show="myinfoCtrl.me">
+	<div> First Name: {{myinfoCtrl.me.firstName}} </div>
+	<div> Last Name: {{myinfoCtrl.me.lastName}} </div>
+	<div> Email Address: {{myinfoCtrl.me.email}} </div>
+	<div> Phone Number: {{myinfoCtrl.me.phone}} </div>
+	<div>
+		Favorite Dish: 
+		<img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.me.favdish.imageUrl}}" alt="{{myinfoCtrl.me.favdish.name}}">
+		<div>title: {{myinfoCtrl.me.favdish.name}}</div>
+		<div>description: {{myinfoCtrl.me.favdish.description}}</div>	
+	</div>
+</div>
+<div ng-hide="myinfoCtrl.me">
+	Not Signed Up Yet. 
+	<a ui-sref="public.signup">Sign up Now!</a>
+</div>

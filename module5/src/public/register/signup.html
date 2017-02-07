@@ -23,13 +23,13 @@
 		Must be a valid email address!				
 		</span>
 		
-		<input class="sign-input type="text" name="phone" size="30" placeholder="phone number"
+		<input class="sign-input type="text" name="phone" size="30" placeholder="xxx-xxx-xxxx"
 		ng-model="signupCtrl.phone"
 		required 
 		pattern="(\d{3})-(\d{3})-(\d{4})">
 		<span ng-if="signupForm.phone.$invalid
 					&& signupForm.phone.$touched">
-		Phone number is required!				
+		Phone number must be in the format of xxx-xxx-xxxx!				
 		</span>
 		
 		<input class="sign-input" type="text" name="favdishSn" size="30" placeholder="favorite dish(menu number)"
